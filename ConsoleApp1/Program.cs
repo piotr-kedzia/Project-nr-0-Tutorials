@@ -11,10 +11,28 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            Hello();
-
+            //Hello();
+            Fibonacci();
+            Console.ReadKey();
 
         }
+
+        static void Fibonacci()
+        {
+            List<int> fibonacciNumbers = new List<int> { 1, 1};
+
+            while (fibonacciNumbers.Count < 20)
+            {
+                var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+                var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+                //dodaj do listy nową pozycje o wartości sumy dwóch poprzednich
+                fibonacciNumbers.Add(previous + previous2);
+            }
+            foreach (var item in fibonacciNumbers)
+                Console.WriteLine(item);
+        }
+
 
         static void Hello()
         {
@@ -35,7 +53,7 @@ namespace ConsoleApp1
             Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
             Console.WriteLine();
             Console.WriteLine($"The list has {names.Count} people in it");
-            Console.WriteLine(); Console.ReadKey();
+            Console.WriteLine();
 
             var index = names.IndexOf("Felipe");
             if (index != -1)
@@ -43,6 +61,11 @@ namespace ConsoleApp1
 
             var notFound = names.IndexOf("Not Found");
             Console.WriteLine($"When an item is not found, IndexOf returns {notFound}");
+            names.Sort();
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
             Console.ReadKey();
         }
 
