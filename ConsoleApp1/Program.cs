@@ -18,12 +18,20 @@ namespace ConsoleApp1
 
         static void Hello()
         {
-            List<string> names = new List<string> { "Ana", "Maria", "Felipe" };
+            List<string> names = new List<string> { "Ana", "Felipe" };
             foreach (string name in names)
             {
                 Console.WriteLine($"Hello {name.ToUpper()}!");
             }
-            Console.WriteLine("---------------------");
+            Console.WriteLine();
+            names.Add("Maria");
+            names.Add("Bill");
+            names.Remove("Ana");
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
+            Console.ReadKey();
         }
 
 
