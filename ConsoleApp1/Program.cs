@@ -18,12 +18,12 @@ namespace ConsoleApp1
 
         static void Hello()
         {
-            List<string> names = new List<string> { "Ana", "Felipe" };
+            List<string> names = new List<string> { "Beatrice", "Ana", "Felipe" };
             foreach (string name in names)
             {
                 Console.WriteLine($"Hello {name.ToUpper()}!");
             }
-            Console.WriteLine();
+            Console.WriteLine("New names list \n");
             names.Add("Maria");
             names.Add("Bill");
             names.Remove("Ana");
@@ -31,6 +31,10 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"Hello {name.ToUpper()}!");
             }
+            Console.WriteLine($"My name is {names[0]}.");
+            Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+            Console.WriteLine();
+            Console.WriteLine($"The list has {names.Count} people in it");
             Console.ReadKey();
         }
 
